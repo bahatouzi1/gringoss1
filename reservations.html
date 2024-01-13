@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reservation.css">
+</head>
+<header>
+    <h1>Reservations</h1>
+</header>
+<body>
+    <h3>Make a reservation to secure your table:<br> <pre>Call us at: 99025777 or through the form</pre> </h3>
+    <form >
+        <h2>Réservation de Restaurant</h2>
+        
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br>
+        
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br>
+        
+        <label for="telephone">Téléphone :</label>
+        <input type="number" id="telephone" name="telephone" required><br>
+        
+        <label for="date">Date :</label>
+        <input type="date" id="date" name="date" required><br>
+        
+        <label for="heure">Heure :</label>
+        <input type="time" id="heure" name="heure" required><br>
+        
+        <label for="nombre_personnes">Nombre de personnes :</label>
+        <input type="number" id="nombre_personnes" name="nombre_personnes" required><br>
+    
+        <input type="button" value="Réserver" onclick="NombreDePersonnes()">
+    </form>
+    <footer>
+        <p>&copy;  Restaurant gringoss.</p>
+    </footer>
+    <script>
+       function NombreDePersonnes() {
+        var nbspersonne= document.getElementById("nombre_personnes").value;
+        for (var i = 0; i < nbspersonne; i++)
+            if (nbspersonne > 5) {
+                alert("The number of people must be less than 6 or two tables must be reserved!");
+            } else {
+                alert("Successful Booking");
+            }
+    }
+    </script>
+</body>
+</html>

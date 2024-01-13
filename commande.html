@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="commande.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+        background-color: #9b6b6b;
+        color: #910404;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        padding: 1em;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: -20%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #192c1a;
+        }
+        input[type="button"] {
+            background-color: #c24f3b;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #471613;
+        }
+    </style>
+</head>
+<header>
+    <h1>commande</h1>
+</header>
+<body>
+    <section id="menu">
+        <h2>Menu</h2>
+
+        <h3>Special Pizzas</h3>
+        <ul>
+            <li>pizza thon : 9.000</li>
+            <li>pizza escalope : 10.000</li>
+            <li>pizza chawarma : 10.000</li>
+        </ul>
+
+        <h3>Delicious Sandwiches</h3>
+        <ol>
+            <li>sandwich thon : 4.500</li>
+            <li>sandwich escalope/chawarma : 5.000</li>
+            <li>sandwich special : 7.000</li>
+        </ol>
+
+        <h3>Delicious Lebanais</h3>
+        <ul>
+            <li>libanais thon : 5.000</li>
+            <li>libanais escalope/chawarma : 5.500</li>
+            <li>libanais special : 8.000</li>
+        </ul>
+    </section>
+    <form >
+        <h2>Order Form</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="number" id="phone" name="phone" required>
+
+        <label for="menu_item">Menu Item:</label>
+        <input type="text" id="Item" name="item" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+
+        <label for="description">Description:</label>
+        <textarea id="desc" name="desc" cols="30" rows="5"></textarea>
+
+        <input type="button" value="Calculer le montant" onclick="calculerMontant()">
+        <input type="submit" value="send" onclick="verifieitem()">
+        <input type="submit" value=" Comments" onclick="Comment()">
+    </form>
+    <footer>
+        <p>&copy;  Restaurant gringoss.</p>
+    </footer>
+    <script>
+        // programation evenmentielle: Lorsque l'utilisateur clique sur le bouton "Vos commentaires", l'événement onclick est déclenché, appelant la fonction JavaScript Comment()
+        function Comment() {
+            prompt("Your comments");
+        }
+        function verifieitem() {
+            // Récupération de la valeur du champ "Menu Item"
+            var menuItemValue = document.getElementById("Item").value;
+
+            // Liste des éléments possibles dans le menu
+            var menuItems = ["pizza thon", "pizza escalope", "pizza chawarma", "sandwich thon", "sandwich escalope", "sandwich chawarma", "sandwich special", "libanais thon", "libanais escalope", "libanais chawarma", "libanais special"];
+
+            // Vérification si la valeur du champ "Menu Item" n'est pas dans le menu
+            if (!menuItems.includes(menuItemValue.toLowerCase())) {
+                // Affichage du message si la valeur n'est pas dans le menu
+                document.write("Your Item is not in our menu !");
+            }else{
+                alert("Commande envoyée avec succès!");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <style>
+         * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 0.5em;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1em;
+        }
+
+        section {
+            padding: 2em;
+        }
+
+        table {
+            width: 60em;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #615b55;
+            
+        }
+
+        th, td {
+            border: 1px solid #6e3737;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            text-align: center;
+            
+            color: #570808;
+        }
+        .image img {
+            height: 5em;
+            margin-left: 20%;
+            max-width: 50%;
+        }
+        #home img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        marquee{
+            color: goldenrod;
+        }
+        #video{
+            height: 50px;
+            margin-top: 45%;
+            margin-left: 60%;
+            
+        }
+        #menu{
+            margin-top: -15%;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 style="color: rgb(49, 10, 10);font-size: 500%;font-style: oblique;">Restaurant gringoss</h1>
+        <audio controls><source src="audio.mp3" type="audio/mp3"></audio>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="reservations.html">Reservations</a>
+        <a href="commande.html">commande</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="home">
+        <img src="gringossaff.jpg" alt="">
+        
+        <marquee behavior="scroll" direction="left">
+                <h2>Welcome to Our Restaurant</h2>
+                <p>Enjoy delicious food and a great dining experience at our restaurant.</p>
+        </marquee>
+    </section>
+    <section id="video">
+        <video width="640" height="360" controls>
+        <source src=vid.mp4 type="video/mp4"></video>
+    </section>
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>photo</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody class="image">
+                <tr>
+                    <td>pizza thon</td>
+                    <td><img src="thon.jpg" alt="pizza"></td>
+                    <td>sauce tomate,fromage,thon</td>
+                    <td>9.000</td>
+                </tr>
+                <tr>
+                    <td>pizza escalope</td>
+                    <td><img src="esca.jpg" alt="escalop"></td>
+                    <td>sauce tomate,fromage,escalope</td>
+                    <td>10.000</td>
+                </tr>
+                <tr>
+                    <td>pizza chawarma</td>
+                    <td><img src="Pizza-shawarma-with-garlic-sauce.webp" alt="chawarma"></td>
+                    <td>sauce tomate,fromage,chawarma</td>
+                    <td>10.000</td>
+                </tr>
+                <tr>
+                    <td>pizza royal</td>
+                    <td><img src="royal.jpg" alt=""></td>
+                    <td>sauce tomate,fromage,escalope,chawarma</td>
+                    <td>14.000</td>
+                </tr>
+                <tr>
+                    <td>sandwich thon</td>
+                    <td rowspan="3"><img src="tabouna.jpg" alt=""></td>
+                    <td>les sauces,salade,thon</td>
+                    <td>4.500</td>
+                </tr>
+                <tr>
+                    <td>sandwich escalope/chawarma</td>
+                    <td>les sauces,salade,escalope/chawarma</td>
+                    <td>5.000</td>
+                </tr>
+                <tr>
+                    <td>sandwich special</td>
+                    <td>les sauces,salade,oeuf,fromage,escalope et chawarma</td>
+                    <td>7.000</td>
+                </tr>
+                <tr>
+                    <td>libanais thon</td>
+                    <td rowspan="3"><img src="libanais.jpg" alt=""></td>
+                    <td>les sauces,salade,thon</td>
+                    <td>5.000</td>
+                </tr>
+                <tr>
+                    <td>libanais escalope/chawarma</td>
+                    <td>les sauces,salade,escalope/chawarma</td>
+                    <td>5.500</td>
+                </tr>
+                <tr>
+                    <td>libanais special</td>
+                    <td>les sauces,salade,oeuf,fromage,escalope et chawarma</td>
+                    <td>8.000</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="first Name" />
+            <input type="text" placeholder="last Name" />
+            <input type="email@" placeholder="email" /><br>
+            <textarea name="message" cols="30" rows="8" placeholder="Add Your Message here"></textarea><br>
+            <input type="submit" value="Send" />
+        </form>
+        <p>For general inquiries, please email us at: gringoss@gmail.com</p>
+    </section>
+
+    <footer>
+        <p>&copy;  Restaurant gringoss.</p>
+    </footer>
+
+</body>
+</html>
